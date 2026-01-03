@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNUERECOG | AI Diagnostics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-barba="wrapper">
+    <div class="transition-wipe"></div>
+    
+    <nav class="fixed top-0 w-full z-50 p-10 flex justify-between items-center mix-blend-difference text-white">
+        <a href="/" class="font-bold text-xl tracking-tighter uppercase">Pnue<span class="text-emerald-500">Recog</span></a>
+        <span class="text-[10px] tracking-[0.4em] opacity-50">SYSTEM VERSION 1.0.4</span>
+    </nav>
+
+    <main data-barba="container" data-barba-namespace="home">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

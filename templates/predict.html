@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="min-h-screen pt-40 pb-20 px-10 bg-[#050505] text-white">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+        <div class="reveal relative rounded-3xl overflow-hidden border border-white/10">
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" class="w-full grayscale opacity-70">
+            <div class="scan-line"></div>
+        </div>
+
+        <div class="space-y-10">
+            <div class="reveal">
+                <h2 class="text-emerald-500 text-xs tracking-[0.5em] uppercase font-bold mb-4">Analysis Result</h2>
+                <h1 class="text-6xl font-syne tracking-tighter">{{ result }}</h1>
+            </div>
+
+            <div class="reveal">
+                <div class="flex justify-between mb-4">
+                    <span class="text-xs tracking-widest uppercase opacity-40">Confidence Score</span>
+                    <span class="text-2xl font-syne">{{ confidence }}%</span>
+                </div>
+                <div class="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div id="confBar" class="h-full bg-emerald-500" data-value="{{ confidence }}"></div>
+                </div>
+            </div>
+
+            <div class="reveal pt-10 border-t border-white/5">
+                <a href="/" class="text-xs tracking-[0.3em] uppercase font-bold hover:text-emerald-500 transition-colors">← Start New Scan</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
